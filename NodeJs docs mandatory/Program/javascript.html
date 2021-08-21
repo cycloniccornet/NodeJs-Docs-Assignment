@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mandatory Node.js</title>
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/mainContent.css">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=js&amp;skin=defualt"></script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="caption">Javascript</div>
+    <ul>
+        <li><a href="/">Description</a></li>
+        <li>
+            <a href="/Javascript">Javascript</a>
+            <ul>
+                <li><a href="#whatIsJavascript">What is Javascript?</a></li>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#arrays">Arrays</a></li>
+                <li><a href="#functions">Functions</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="/Node.js">Node.js</a>
+            <ul>
+                <li><a href="#whatIsNodejs">What is Node.js?</a></li>
+                <li><a href="#installation">Install Node.js</a></li>
+                <li><a href="#dependencies">Dependencies</a></li>
+                <li><a href="#npm">Node package manager</a></li>
+                <li><a href="#appjs">App.js</a></li>
+                <li><a href="#express">Express</a></li>
+                <li><a href="#relevantCode">Relevent Express commands</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="/Front-end">Front-end</a>
+            <ul>
+                <li><a>HTML</a></li>
+                <li><a>CSS</a></li>
+                <li><a>Jquery</a></li>
+            </ul>
+        </li>
+
+        <li><a>Aditionale pages</a></li>
+
+    </ul>
+</nav>
+
+<section class="main-section">
+
+    <div class="main-content">
+        <h1>Javascript </h1>
+        <div class="main-info">
+
+            <h2 id="whatIsJavascript">What is javascript?</h2>
+            <p>
+                To put things simply, JavaScript is an object orient programming language designed to make web development easier and more attractive.
+                In most cases, JavaScript is used to create responsive, interactive elements for web pages, enhancing the user experience.
+            </p>
+
+            <h2 id="variables">Variables</h2>
+            <p>
+                Javascript has 3 types of variables but only 2 of them is used. Why you may ask?
+                Beacuse Anders says so! <br> The Three types of variable is:
+            <li>let</li>
+            <li>const</li>
+            <li>var</li><br>
+            The <strong>let</strong> statement declares a block-scoped local variable, optionally initializing it to a value.
+            This means the let statment allows you to declare variables that are limited to the scope of a block statement.
+            <br>
+            <br>
+            <div class="codedisplay">
+                <h3 class="code-example">Example</h3>
+                <pre>
+                    var x = 10;
+                    // Here x is 10
+                    {
+                    let x = 2;
+                    // Here x is 2
+                    }
+                    // Here x is 10</pre>
+            </div>
+            </p>
+            <p>
+                In JavaScript the <strong>const</strong> means that the identifier can't be reassigned.
+                (Not to be confused with immutable values. <br>
+                You can change the properties of a constant object, but you can NOT reassign a constant object:
+            <div class="codedisplay">
+            <h3 class="code-example">Example</h3>
+            <pre>
+                const car = {type:"Fiat", model:"500", color:"white"};
+                car = {type:"Volvo", model:"EX60", color:"red"}; // ERROR</pre>
+
+            </div>
+            </p>
+
+
+            <h2 id="arrays">Arrays</h2>
+            <p>
+                JavaScript arrays are used to store multiple values in a single variable.
+                <br>
+                <br>
+                Du ved hvordan arrays virker... Her er syntaxen:
+                <br>
+            <div class="codedisplay">
+            <h3 class="code-example">Example</h3>
+            <pre>
+                var array_name = [item1, item2, ...];</pre>
+            </div>
+            </p>
+
+            <h2 id="callbackFunction">Callback Function</h2>
+            <h3>Why use Callback Function</h3>
+            <p>
+            We use javaScript Callback Functions beacuse it can be used synchronously or asynchronously. <br>
+            This means we can call a at the same time, or as a relay of information with a time lag.<br><br>
+
+            <h3>What is a callback fucntion</h3>
+            <!-- https://www.dashingd3js.com/lessons/javascript-callback-functions -->
+            A JavaScript Callback Function is a function that is passed as a parameter to another JavaScript function,
+            and the callback function is run inside of the function it was passed into.<br><br>
+            In the following example we create a function with a callback function that can be used
+            after a check or somehting else.
+
+            <div class="codedisplay">
+                <h3 class="code-example">Callback function example</h3>
+                <pre>
+                    function sayHiLater(anyFunctionReference) {
+                        anyFunctionReference()
+                    }
+
+                    const  myArrowFunction = () => {
+                        console.log("Hi there from the anonymous function")
+                    }
+
+                    sayHiLater(myArrowFunction);</pre>
+            </div><br>
+            In the example above we have a function sayHiLater in witch we give myArrowFunction as a parameter. <br>
+            The cool thing is now we can make checks that needs to be true or false before sayHiLater accually runs the myArrowFucntion.
+
+
+            </p>
+
+
+
+        </div>
+    </div>
+
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>

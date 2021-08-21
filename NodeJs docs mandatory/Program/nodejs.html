@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node.js</title>
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/mainContent.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="caption">Node.js</div>
+    <ul>
+        <li><a href="/">Description</a></li>
+        <li>
+            <a href="/Javascript">Javascript</a>
+            <ul>
+                <li><a href="#whatIsJavascript">What is Javascript?</a></li>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#arrays">Arrays</a></li>
+                <li><a href="#functions">Functions</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="/Node.js">Node.js</a>
+            <ul>
+                <li><a href="#whatIsNodejs">What is Node.js?</a></li>
+                <li><a href="#installation">Install Node.js</a></li>
+                <li><a href="#dependencies">Dependencies</a></li>
+                <li><a href="#npm">Node package manager</a></li>
+                <li><a href="#appjs">App.js</a></li>
+                <li><a href="#express">Express</a></li>
+                <li><a href="#relevantCode">Relevent Express commands</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="/Front-end">Front-end</a>
+            <ul>
+                <li><a>HTML</a></li>
+                <li><a>CSS</a></li>
+                <li><a>Jquery</a></li>
+            </ul>
+        </li>
+
+        <li><a>Aditionale pages</a></li>
+
+    </ul>
+</nav>
+
+<section class="main-section">
+        <div class="main-content">
+            <h1>Note.js </h1>
+            <div class="main-info">
+                <h2 id="whatIsNodejs">What is node.js?</h2>
+                <p>Node.js is a JavaScript runtime built on chromes v8 javaScript engine. <br>
+                   Node.js is a fullstack job because we work on both the backend- and frontend-layer.
+                </p>
+
+                <h2 id="installation">Install Node.js</h2>
+                <p>Indsæt install guide</p>
+
+                <h2 id="dependencies">Dependencies</h2>
+                <p>When you run the npm command (disguised later) requires a set of dependencies located in in a packet.json file.<br>
+                   Dependencies are used to tell the node package manager which liberies it should install and what version. <br><br>
+                   To create package.json file you have to create a new file and type the following.
+
+                <div class="codedisplay">
+                    <h3 class="code-example">Example</h3>
+                    <pre>
+                    package.json</pre><br>
+                </div>
+
+                Now if you run npm -i in the console it will tell you that you are missing all a lot of dependensies in the package.json file
+                A basic version of what you will need will look like this.<br><br>
+                <h3>Package.json</h3>
+
+                <div class="codedisplay">
+                    <h3 class="code-example">Example</h3>
+                    <pre>
+                    {
+                        "description": "NodeJs Mandatory assignment 4th sem",
+                        "dependencies": {
+                            "body-parser": "^1.19.0",
+                            "express": "^4.17.1"
+                        },
+                        "devDependencies": {
+                            "nodemon": "^2.0.4"
+                         }
+                    }</pre>
+                    <i>note: that the <strong>key</strong> in the json format is the name of the <strong>dependencie</strong> and the <strong>value</strong> is the <strong>version number</strong>.</i><br>
+                </div>
+                </p>
+
+
+                <h2 id="npm">Node package manager | Npm</h2>
+                <p>
+                    Node package manager or npm is a package manager for the Javascript language.
+                    Its job is to puts modules in place so that node can find them, and manages dependency conflicts intelligently.
+                </p>
+                <p>
+                    To run the node package manager you need to navigate to the folder
+                    where you have your package.json file and use the terminal to run its commands.<br>
+                </p>
+                <h3>installation</h3>
+                <p>
+                    npm is distributed with Node.js- which means that when you download Node.js, you automatically get npm installed on your computer.
+                </p>
+                <h3>Commands</h3>
+                <p>
+                    <div class="codedisplay">
+                        Npm has a lot of commands... but heres the most common.
+
+                        <pre>
+                            npm i package : install local package.
+                            npm i -g package : install global package.
+                            npm un package : uninstall local package.
+                            npm up : npm update packages.</pre>
+                    </div>
+                </p>
+
+
+                <h2 id="appjs">App.js</h2>
+                <p>
+                    the app.js file is the file where you run your server.<br>
+                    its a <strong>convention</strong> that the fill is called app.js
+                </p>
+                <p>
+                    We use methods from express which we will take a look at later.
+                    With these methods we can create a simple rest-api. <br>
+                    in the app.js file the main component to make a server will be Express
+                </p>
+                <p>
+                    The rest api is made up off five mappings:<br>
+                <li><strong>Get</strong><br></li>
+                <li><strong>Post </strong><br></li>
+                <li><strong>Put</strong><br></li>
+                <li><strong>Patch</strong><br></li>
+                <li><strong>Delete</strong><br></li>
+                    Each http method has a patch that will look something like this for a car api.
+                <div class="codedisplay">
+                    <h3 class="code-example">Restfull</h3>
+                    <pre>
+                    HTTP METHOD     Path
+                    get             /cars
+                    get             /cars/{id}
+                    post            /cars/{id}
+                    patch           /cars/{id}
+                    delete          /cars/{id}</pre>
+                </div>
+                </p>
+
+
+                <h2 id="express">Express</h2>
+                <p>
+                    Express.js, or simply Express, is a back end web application framework for Node.js.
+                    This is the library that has most of the method used to make a server in node.
+                <div class="codedisplay">
+                    <h3 class="code-example">Install Express</h3>
+                    <pre>
+                    const express = require('express');
+                    const app = express();</pre><br>
+                    <h3 class="code-example">one-liner</h3>
+                    <pre>
+                    const app = require("express")();</pre>
+                </div>
+                </p>
+                <h3>Basic app.js file using Express</h3>
+                <p>
+                    A basic setup for a server with a get-mapping to the root.
+
+                <div class="codedisplay">
+                <h3 class="code-example">app.js basic setup</h3>
+                <pre>
+                    const express = require('express');
+                    const app = express();
+
+                    app.use(express.static(__dirname + "/static"))
+
+                    app.get("/", (req, res) => {
+                    return res.sendFile(__dirname + "/index.html");
+                    })
+
+                    const port = process.env.PORT || 80;
+                    app.listen(port, (error) =>{
+                    if (error){
+                    console.log( "Server could not start.. Error: " + error);
+                    }
+                    console.log("Server started on port", Number(port))
+                    });</pre>
+                </div>
+                </p>
+                <h3>app.listen</h3>
+                <p>
+                In the example above "app.js basic setup" you see a app.listen method. <br>
+                The app.listen methods takes two parameters, a port and an error.
+                We could just set it to our desired port, but as seen we use <strong>const port = process.env.PORT || 80;</strong> <br> <br>
+
+                This line of code says that, when we run app.listen it will call the port variable.
+                process.env.PORT checks if a PORT i defined. <br>
+                This is usefull when we have other servers running on diffrent same ports.
+                if this is the case we can change app.listen to run on a free port when we start the server.
+                <div class="codedisplay">
+                    <h3 class="code-example">Change server port in terminal</h3>
+                    <pre>
+                    cross-env PORT=8080 nodemon app.js</pre>
+                </div><br>
+                To run the prior example we need to add a couple of things..
+
+                <div class="codedisplay">
+                    <h3 class="code-example">Update dependencies in package.json</h3>
+                    <pre>
+                    "cross-env": "^7.0.2"</pre><br>
+                    <h3 class="code-example">Create a scriptstart</h3>
+                    <pre>
+                        "scripts": {
+                            "start-dev": "cross-env PORT=8080 nodemon app.js",
+                            "start-prod": "node app.js"</pre>
+                </div><br>
+                Now we have two runnable command, one for devloper option and one for production.<br>
+                These scripts can be run and will use the key as command and will run the value as code in the terminal.<br><br>
+                It can also be done with the following line.
+
+                <div class="codedisplay">
+                    <h3 class="code-example">Change port in terminal with cmd</h3>
+                    <pre>
+                    $ PORT =3000 node .\app.js</pre><br>
+                    <h3 class="code-example">Change port in terminal with powershell</h3>
+                    <pre>
+                        $ set PORT =3000 node .\appCarAnders.js</pre>
+                </div><br>
+                <h3>Querystring and Pathvariable</h3>
+                There is 2 ways to serve data.
+
+                Using a query string we can serve the data in the url.
+
+
+                <div class="codedisplay">
+                    <h3 class="code-example">Query string</h3>
+                    With the following url we have a '?' that defines the key, and a '=' that defines the value
+                    <pre>
+                    http://localhost:8080/querystring?query=hello&query2=another</pre><br>
+                    <h3 class="code-example">Querystring mapping</h3>
+                    The method in an app.js file will look like this
+                    <pre>
+                        app.get("/message/:personalMessage", (req,res)=>{
+                            return res.send({
+                                message: req.params.personalMessage,
+                                querystring: req.query})
+                        })</pre>
+                </div><br>
+
+                The second method is a with a path variable.
+
+                app.get("/message/:personalMessage", (req,res)=>{
+                return res.send({
+                message: req.params.personalMessage,
+                querystring: req.query})
+                })
+
+                <div class="codedisplay">
+                    <h3 class="code-example">Pathvariable string</h3>
+                    The following url will create a json object with the key personalmessage and value hej.
+                    <pre>
+                    http://localhost:8080/message/hej</pre><br>
+                    <h3 class="code-example">Pathvariable mapping</h3>
+                    The method in an app.js file will look like this.<br>
+                    here we use ':' tell this is a pathvariable.
+                    <pre>
+                        app.get("/message/:personalMessage", (req,res)=>{
+                            return res.send({
+                                message: req.params.personalMessage,
+                        })</pre>
+                </div><br>
+
+
+                </p>
+                <h2 id="relevantCode">Relevant code</h2>
+                <p>
+                    Here's some method that will be usefull to remember
+                </p>
+                <p>
+                <div class="codedisplay">
+                    <h3 class="code-example">Static folder</h3>
+                    When express starts the server it only takes an index file with it.
+                    This means that both css files and images wont be loaded.<br>
+                    The following code will allow express to include these files as static.<br>
+                    First off we need to create a static folder with 2 sub folders. <br><br>
+                    <pre>
+                    static
+                     --> css
+                     --> img</pre><br>
+                    <br>
+                    Now we need to tell express to include this folder as a static folder when booting up.
+                    <pre>
+                    app.use(express.static(__dirname + "/static"))</pre>
+                </div>
+                </p>
+                <h3>Redirection</h3>
+                <p>
+                    Theres 3 ways to redirect a user.
+                <div class="codedisplay">
+                    <h3 class="code-example">Client site</h3>
+                    In app.js
+                    <pre>
+                    res.redirect('http://example.com')</pre><br>
+
+                    <h3 class="code-example">ServerSite</h3>
+                    in a tag.
+                    <pre>
+                       href="/about"</pre>
+
+                    <h3>Programmatically</h3>
+                    Inside a script.
+                    <pre>
+                        Window.location.href =  "/about"</pre>
+                </div>
+                </p>
+            </div>
+        </div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>

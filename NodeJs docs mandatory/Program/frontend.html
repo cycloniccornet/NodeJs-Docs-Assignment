@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mandatory Node.js</title>
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/mainContent.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="caption">Front-end</div>
+    <ul>
+        <li><a href="/">Description</a></li>
+        <li>
+            <a href="/Javascript">Javascript</a>
+            <ul>
+                <li><a href="#whatIsJavascript">What is Javascript?</a></li>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#arrays">Arrays</a></li>
+                <li><a href="#functions">Functions</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="/Node.js">Node.js</a>
+            <ul>
+                <li><a href="#whatIsNodejs">What is Node.js?</a></li>
+                <li><a href="#installation">Install Node.js</a></li>
+                <li><a href="#dependencies">Dependencies</a></li>
+                <li><a href="#npm">Node package manager</a></li>
+                <li><a href="#appjs">App.js</a></li>
+                <li><a href="#express">Express</a></li>
+                <li><a href="#relevantCode">Relevent Express commands</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="/Front-end">Front-end</a>
+            <ul>
+                <li><a>HTML</a></li>
+                <li><a>CSS</a></li>
+                <li><a>Jquery</a></li>
+            </ul>
+        </li>
+
+        <li><a>Aditionale pages</a></li>
+
+    </ul>
+</nav>
+
+<section class="main-section">
+    <div class="main-content-area">
+        <div class="main-content">
+            <h1>Front-end </h1>
+            <div class="main-info">
+
+                <h2 id="html">HTML</h2>
+                <p>
+                Diffrent tags does diffrent things. This will not be discussed here. <br>
+                We will look at how class and id can be access.
+
+                When we make a tag we can add a class or an id to the tag.
+                The <strong>class</strong> can be given to multiple tags and is mostly used with css.
+
+                <div class="codedisplay">
+                    <h3 class="code-example">adding a class to a div</h3>
+                    <pre>
+                        div class="codedisplay" /div</pre>
+                </div><br>
+                We can now call the div using a '.'
+                to tell its a class + name of class. we will look at this in the css part.
+
+                When we make a tag we can also add a id to the tag.
+                The <strong>id</strong> is uniqe and can only be added to one tag.
+
+                <div class="codedisplay">
+                    <h3 class="code-example">adding a id to a div</h3>
+                    <pre>
+                        div id="codedisplay"/div</pre>
+                </div><br>
+                We can now call the div using a '#' to tell its a id + name of class. we will look at this in the css part.
+                </p>
+
+                <h2 id="css">CSS</h2>
+                <p>
+                    In the html segment we talked about how id and class's work.
+                    Now we will look at how to access both in css.<br>
+                    Using the syntax from html we can access the class and the id as follows.
+                <div class="codedisplay">
+                    <h3 class="code-example">Accessing class through css.</h3>
+                    <pre>
+                        .codedisplay {
+                        #Do some styling to a class.
+                        }</pre><br><br>
+                    <h3 class="code-example">Accessing id through css.</h3>
+                    <pre>
+                        #codedisplay {
+                        #Do some styling to a class.
+                        }</pre>
+                </div><br>
+
+                </p>
+                <h2 id="Jquery">Jquery</h2>
+                <p>
+                jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation,
+                as well as event handling, CSS animation, and Ajax.
+
+                <div class="codedisplay">
+                    <h3 class="code-example">Basic jquery syntax</h3>
+                    <pre>
+                        $(selector).action()
+
+                        A $ sign to define/access jQuery
+                        A (selector) to "query (or find)" HTML elements
+                        A jQuery action() to be performed on the element(s)</pre>
+                </div><br>
+
+                As mentioned above we can use the selector to access class'es and id's.
+
+                <div class="codedisplay">
+                    <h3 class="code-example">Using jquery syntax</h3>
+                    <button id="showCodeExampleButton" style="background-color: #4CAF50; border: 1px; color: white;  padding: 15px 32px;  text-align: center;text-decoration: none;display: inline-block;font-size: 16px; border-radius: 8px"> Show hidding codeexample</button><br><br>
+                    <pre id="showCodeExamplePre" style="display: none">
+                        Wow!
+                        Hows that for using jQuery to make it a nicer user experience!
+                        :')</pre>
+                </div><br>
+
+                To do this we use a script with jqeury where the selector is to a button. <br>
+                Here we have a function that is activated when the button is pressed and
+                this runs another jquery script that changes the styleing of a pre to visiable.<br>
+                With this code we can create the following jquery script.
+
+                <div class="codedisplay">
+                    <h3 class="code-example">jQuery application</h3>
+                    <pre> $(document).ready(function () {
+                                $('#showCodeExampleButton').click(function () {
+                                    $('#showCodeExamplePre').css("display", "block");
+                                });
+                          })</pre>
+                </div><br>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#showCodeExampleButton').click(function () {
+            $('#showCodeExamplePre').css("display", "block");
+        });
+    })
+</script>
+
+<script src="./index.js"></script>
+</body>
+</html>
